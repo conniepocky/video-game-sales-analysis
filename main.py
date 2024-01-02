@@ -7,7 +7,7 @@ data = pd.read_csv("Video_Games.csv")
 
 sales_per_year = data.groupby("Year_of_Release")["Global_Sales"].sum()
 
-sales_per_genres = data.groupby("Genre")["Global_Sales"].sum()
+sales_per_genres = data.groupby("Genre")["Global_Sales"].sum().sort_values(ascending=False)
 
 top_selling_games = data.groupby("Name")["Global_Sales"].sum().sort_values(ascending=False).head()
 
